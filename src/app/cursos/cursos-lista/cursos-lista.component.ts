@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
 import { CursosService } from '../cursos.service';
 import { Curso } from '../curso';
@@ -10,15 +11,19 @@ import { Curso } from '../curso';
 })
 export class CursosListaComponent {
 
-  cursos: Curso[] = [];
+  // cursos: Curso[] = [];
+
+  cursos$!: Observable<Curso[]>;
+
 
   constructor(
     private service: CursosService
   ) {}
 
   ngOnInit() {
-    this.service.list()
-      .subscribe(dados => this.cursos = dados);
+    // this.service.list()
+    //   .subscribe(dados => this.cursos = dados);
+    this.cursos$ = this.service.list();
   }
 
 }
