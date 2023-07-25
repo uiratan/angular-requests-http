@@ -1,3 +1,4 @@
+import { AlertModalService } from './../../shared/alert-modal.service';
 import { Component } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { catchError, empty, Observable, Subject } from 'rxjs';
@@ -16,7 +17,7 @@ export class CursosListaComponent {
 
   // cursos: Curso[] = [];
 
-  bsModalRef?: BsModalRef;
+  // bsModalRef?: BsModalRef;
 
   cursos$!: Observable<Curso[]>;
   error$ = new Subject<boolean>();
@@ -24,7 +25,8 @@ export class CursosListaComponent {
 
   constructor(
     private service: CursosService,
-    private modalService: BsModalService
+    // private modalService: BsModalService,
+    private alertModalService: AlertModalService
   ) {}
 
   ngOnInit() {
@@ -39,7 +41,7 @@ export class CursosListaComponent {
       catchError(error => {
         console.log(error);
         //this.error$.next(true);
-        this.handleError();
+        this.handleError()
         return empty();
       })
     );
@@ -59,8 +61,9 @@ export class CursosListaComponent {
   }
 
   handleError() {
-    this.bsModalRef = this.modalService.show(AlertModalComponent);
-    this.bsModalRef.content.type = 'danger';
-    this.bsModalRef.content.message = 'Erro ao carregar cursos. Tente novamente mais tarde.';
+    this.alertModalService.showAlertDanger('Erro ao carregar cursos. Tente novamente mais tarde.');
+    // this.bsModalRef = this.modalService.show(AlertModalComponent);
+    // this.bsModalRef.content.type = 'danger';
+    // this.bsModalRef.content.message = 'Erro ao carregar cursos. Tente novamente mais tarde.';
   }
 }
