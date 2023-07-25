@@ -1,0 +1,35 @@
+<form class="row g-3 needs-validation p-3" novalidate [formGroup]="form">
+  <div class="col-sm-12">
+    <label for="nome" class="form-label fw-medium">Nome do Curso</label>
+    <input type="text" class="form-control" id="nome" placeholder="Nome do Curso" formControlName="nome"
+      [ngClass]="{ 'is-invalid': submitted && hasError('nome') }">
+    <!-- <div class="valid-feedback">
+      Looks good!
+    </div>
+    <div class="invalid-feedback"  *ngIf="hasError('nome') && hasError('nome')['required']">
+      Por favor informe um nome para o curso.
+    </div>
+    <div class="invalid-feedback"  *ngIf="hasError('nome') && hasError('nome')['minLength']">
+      Nome precisa ter no mínimo {{ hasError('nome')['minLength'].requiredLength }} caracteres.
+    </div>
+    <div class="invalid-feedback"  *ngIf="hasError('nome') && hasError('nome')['maxLength']">
+      Nome precisa ter no máximo {{ hasError('nome')['maxLength'].requiredLength }} caracteres.
+    </div> -->
+    <div  *ngIf="hasError('nome')" class="invalid-feedback">
+      <div *ngIf="hasError('nome')?.['required']">
+        Por favor informe um nome para o curso.
+      </div>
+      <div *ngIf="hasError('nome')?.['minlength']">
+        Nome precisa ter no mínimo {{ hasError('nome')?.['minlength'].requiredLength }} caracteres.
+      </div>
+      <div *ngIf="hasError('nome')?.['maxlength']">
+        Nome pode ter no máximo {{ hasError('nome')?.['maxlength'].requiredLength }} caracteres.
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Salvar</button>
+    <button type="button" class="btn btn-default" (click)="onCancel()">Cancelar</button>
+  </div>
+</form>
