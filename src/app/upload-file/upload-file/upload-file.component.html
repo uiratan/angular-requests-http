@@ -1,0 +1,14 @@
+<div>
+  <!-- <div class="input-group mb-3 mt-3">
+    <input type="file" class="form-control" id="inputGroupFile01" multiple (change)="onChange($event)">
+    <label class="input-group-text" for="inputGroupFile01">Upload</label>
+  </div> -->
+
+  <div class="mb-3">
+    <label for="formFile" class="form-label" id="customFileLabel">Upload</label>
+    <input class="form-control" type="file" id="formFile" multiple (change)="onChange($event)">
+    <span>
+      {{ fileNames }}
+    </span>
+  </div>
+</div>

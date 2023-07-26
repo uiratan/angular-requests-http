@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
@@ -15,5 +15,10 @@ export class AlertModalComponent {
 
   onClose() {
     this.bsModalRef.hide();
+  }
+
+  onDestroy() {
+    console.log('Destruindo AlertModalComponent');
+
   }
 }

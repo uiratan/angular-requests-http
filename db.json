@@ -5,8 +5,48 @@
       "nome": "Angular"
     },
     {
-      "nome": "Java OO",
-      "id": 2
+      "id": 2,
+      "nome": "Java OO"
+    },
+    {
+      "nome": "Angular Material",
+      "id": 3
+    },
+    {
+      "nome": "JavaScript",
+      "id": 5
+    },
+    {
+      "nome": "Delphi",
+      "id": 6
+    },
+    {
+      "nome": "Vue",
+      "id": 7
+    },
+    {
+      "nome": "Python",
+      "id": 9
+    },
+    {
+      "nome": "Terraform",
+      "id": 10
+    },
+    {
+      "nome": "Google Cloud",
+      "id": 11
+    },
+    {
+      "id": 12,
+      "nome": "C ++"
+    },
+    {
+      "id": 13,
+      "nome": "Bootstrap"
+    },
+    {
+      "id": 14,
+      "nome": "HTML"
     }
   ]
 }
