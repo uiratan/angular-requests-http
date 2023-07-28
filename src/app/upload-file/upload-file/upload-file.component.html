@@ -4,11 +4,21 @@
     <label class="input-group-text" for="inputGroupFile01">Upload</label>
   </div> -->
 
-  <div class="mb-3">
-    <label for="formFile" class="form-label" id="customFileLabel">Upload</label>
+  <div class="my-3">
+    <!-- <label for="formFile" class="form-label" id="customFileLabel">Upload</label> -->
     <input class="form-control" type="file" id="formFile" multiple (change)="onChange($event)">
-    <span>
-      {{ fileNames }}
-    </span>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" [style.width]="progress + '%'">{{ progress }}%</div>
+    </div>
   </div>
+</div>
+
+<div>
+  <button type="button" class="btn btn-primary" [disabled]="!files" (click)="onUpload()">Upload</button>
+</div>
+
+<div class="mt-1 float-start">
+  <button type="button" class="btn btn-primary" (click)="onDownloadExcel()">Download Excel</button>
+
+  <button type="button" class="btn btn-primary" (click)="onDownloadPDF()">Download PDF</button>
 </div>
