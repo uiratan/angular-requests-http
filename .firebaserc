@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "uira-loiane-angular": {
+      "hosting": {
+        "requests-http": [
+          "uira-loiane-angular"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "uira-loiane-angular"
+  }
+}
